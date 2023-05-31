@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/inboxMail"
+        android:icon="@drawable/inbox_mail_icon"
+        android:iconTint="#24283B"
+        android:title="Inbox" />
+
+    <item android:id="@+id/sentMail"
+        android:title="Sent"
+        android:iconTint="#24283B"
+        android:icon="@drawable/send_mail_icon"/>
+
+    <item android:id="@+id/starMail"
+        android:title="Star"
+        android:iconTint="#24283B"
+        android:icon="@drawable/inbox_mail_icon"/>
+
+</menu>

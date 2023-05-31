@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (!password.equals("admin")) {
                     txtInLayoutPassword.setError("Password is not valid");
                 } else if (username.equals("admin") && password.equals("admin")) {
-                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent i = new Intent(LoginActivity.this, DashBoardActivity.class);
                     startActivity(i);
                 }
                 else {
