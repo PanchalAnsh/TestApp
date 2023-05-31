@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.testapp.InboxModel;
+import com.example.testapp.Models.InboxModel;
 import com.example.testapp.R;
 
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.viewholder> 
 
             txtshrotmsg = itemView.findViewById(R.id.txtshrotmasg);
             txtmsg = itemView.findViewById(R.id.txtmsg);
-            imageView = itemView.findViewById(R.id.img);
+            imageView = itemView.findViewById(R.id.profile_image);
         }
     }
 }
