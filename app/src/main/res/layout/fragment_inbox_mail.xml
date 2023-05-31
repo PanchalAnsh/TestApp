@@ -5,14 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.InboxMailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/inboxrecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:gravity="center"
-        android:textSize="@dimen/_24sdp"
-        android:textColor="@color/black"
-        android:background="#A0E451"/>
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>
