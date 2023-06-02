@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.contentcapture.DataShareRequest;
 
 import com.example.testapp.MainActivity;
+import com.example.testapp.MySharedPreference;
 import com.example.testapp.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -19,10 +21,15 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this,LoginActivity.class);
-                startActivity(intent);
+                MySharedPreference mySharedPreference = new MySharedPreference();
+                if (mySharedPreference.getData(SplashScreenActivity.this) ==  null){
+                    startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+                } else {
+                    startActivity(new Intent(SplashScreenActivity.this, DashBoardActivity.class));
+                }
                 finish();
             }
-        }, 2000);
+        }, 3000);
+
     }
 }

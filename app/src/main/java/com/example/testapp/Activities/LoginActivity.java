@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.testapp.MainActivity;
+import com.example.testapp.MySharedPreference;
 import com.example.testapp.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -107,6 +108,10 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (!password.equals("admin")) {
                     txtInLayoutPassword.setError("Password is not valid");
                 } else if (username.equals("admin") && password.equals("admin")) {
+
+                    MySharedPreference mySharedPreference = new MySharedPreference();
+                    mySharedPreference.saveData(LoginActivity.this,username);
+
                     Intent i = new Intent(LoginActivity.this, DashBoardActivity.class);
                     startActivity(i);
                 }

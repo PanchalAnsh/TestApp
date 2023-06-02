@@ -17,4 +17,8 @@
         android:iconTint="#24283B"
         android:icon="@drawable/inbox_mail_icon"/>
 
+    <item android:id="@+id/logout"
+        android:title="Logout"
+        android:iconTint="#24283B"
+        android:icon="@drawable/logout_icon"/>
 </menu>

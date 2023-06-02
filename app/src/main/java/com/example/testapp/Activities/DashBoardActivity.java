@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.testapp.Fragment.InboxMailFragment;
+import com.example.testapp.MySharedPreference;
 import com.example.testapp.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -54,12 +55,13 @@ public class DashBoardActivity extends AppCompatActivity {
                     loadFragment(new InboxMailFragment());
                 } else if (id==R.id.starMail) {
                     Toast.makeText(getApplicationContext(),"STAR MAIL",Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else if (id == R.id.logout){
+                    MySharedPreference mySharedPreference = new MySharedPreference();
+                    mySharedPreference.logoutData(DashBoardActivity.this);
+                } else{
                     Toast.makeText(getApplicationContext(),"SENT MAIL",Toast.LENGTH_SHORT).show();
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
-
                 return true;
             }
         });
