@@ -22,11 +22,21 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 MySharedPreference mySharedPreference = new MySharedPreference();
-                if (mySharedPreference.getData(SplashScreenActivity.this) ==  null){
+                if (mySharedPreference.getFlag(SplashScreenActivity.this)) {
+                    startActivity(new Intent(SplashScreenActivity.this, IntrosliderActivity.class));
+                } else if (mySharedPreference.getData(SplashScreenActivity.this) == null) {
                     startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
                 } else {
                     startActivity(new Intent(SplashScreenActivity.this, DashBoardActivity.class));
                 }
+
+
+//                MySharedPreference mySharedPreference = new MySharedPreference();
+//                if (mySharedPreference.getData(SplashScreenActivity.this) ==  null){
+//                    startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+//                } else {
+//                    startActivity(new Intent(SplashScreenActivity.this, DashBoardActivity.class));
+//                }
                 finish();
             }
         }, 3000);

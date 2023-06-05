@@ -9,6 +9,7 @@ import com.example.testapp.Activities.SplashScreenActivity;
 public class MySharedPreference {
     private static final String PREF_USER = "User";
     private static final String PREF_USERNAME = "Username";
+    private static final String FLAG = "flag";
 
     public MySharedPreference(){
         super();
@@ -30,10 +31,21 @@ public class MySharedPreference {
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_USER,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove(PREF_USERNAME);
-        editor.clear();
         editor.apply();
         Intent intent = new Intent(context, SplashScreenActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
+    }
+
+    public void setFlag(Context context, boolean flag){
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_USER,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(FLAG,flag);
+        editor.apply();
+    }
+
+    public boolean getFlag(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_USER,Context.MODE_PRIVATE);
+        return sharedPreferences.getBoolean(FLAG,true);
     }
 }
